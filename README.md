@@ -9,4 +9,4 @@ This playbook will run after a fresh proxmox server installed, it will:
 
 ## Provisioning the server
 
-`ansible-playbook site.yaml`
+`ansible-playbook proxmox.yaml`

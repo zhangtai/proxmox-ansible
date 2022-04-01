@@ -6,15 +6,22 @@
   loop:
     - /etc/apt/sources.list.d/pve-enterprise.list
 
+- name: Create resource folders
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+  loop:
+    - /var/lib/vz/snippets
+
 - name: Install apt packages
   ansible.builtin.apt:
     update_cache: True
     cache_valid_time: 3600
     pkg:
       - git
-      - zip
-      - unzip
-      - vim
+      # - zip
+      # - unzip
+      # - vim
       - curl
 
 - name: Check existence of default ssh priv key

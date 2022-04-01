@@ -1,0 +1,14 @@
+---
+- name: Provisioning Proxmox
+  hosts: pve
+  vars:
+    ubuntu_2004_stage_0_id: 100
+    ubuntu_2004_stage_1_id: 101
+    ubuntu_2004_stage_1_name: ubuntu-2204-stage1-v2
+    stage_1_cloudinit_file: ubuntu_2204_stage_1_cloudinit.yml
+    ubuntu_cloudimg_link: https://cloud-images.ubuntu.com/focal/current/jammy-server-cloudimg-amd64.img
+    ubuntu_cloud_image_path: /var/lib/vz/images/jammy-server-cloudimg-amd64.img
+    force_download_cloudimg: False
+    force_create_stage_0: False
+  roles:
+    - role: 'roles/proxmox'
