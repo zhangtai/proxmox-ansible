@@ -61,7 +61,7 @@
 
 
 - name: Verify if stage 0 template exists
-  ansible.builtin.shell: qm status {{ ubuntu_2004_stage_0_id }}
+  ansible.builtin.shell: qm status {{ ubuntu_2204_stage_0_id }}
   register: vm_id_exists
   ignore_errors: True
 
@@ -70,7 +70,7 @@
   when: vm_id_exists.rc == 2 or force_create_stage_0
 
 - name: Check if stage 1 template exists
-  ansible.builtin.shell: qm status {{ ubuntu_2004_stage_1_id }}
+  ansible.builtin.shell: qm status {{ ubuntu_2204_stage_1_id }}
   register: ci_template_exists
   ignore_errors: True
 
